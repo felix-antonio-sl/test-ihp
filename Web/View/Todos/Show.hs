@@ -23,4 +23,4 @@ instance View ShowView where
                 <a href={EditTodoAction (get #id todo)} class="btn btn-primary">Edit</a>
             </div>
         </div>
-    |] 
+    |]
