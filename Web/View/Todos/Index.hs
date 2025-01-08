@@ -1,5 +1,6 @@
 module Web.View.Todos.Index where
 import Web.View.Prelude
+import qualified Text.Blaze.Html5 as H
 
 data IndexView = IndexView { todos :: [Todo] }
 
@@ -35,7 +36,7 @@ renderTodo todo = [hsx|
         <td>
             <form method="POST" action={ToggleTodoAction (get #id todo)} class="d-inline">
                 <button class={classes ["btn", if get #isCompleted todo then "btn-success" else "btn-secondary"]}>
-                    {if get #isCompleted todo then "Completed" else "Pending"}
+                    {H.text $ if get #isCompleted todo then "Completed" else "Pending"}
                 </button>
             </form>
         </td>
