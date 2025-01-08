@@ -8,13 +8,10 @@ import IHP.RouterSupport
 import qualified IHP.Server
 import Web.FrontController
 import Web.Types
-import ToDo.FrontController
-import ToDo.Types
 
 instance FrontController RootApplication where
   controllers =
     [ mountFrontController WebApplication
-            , mountFrontController ToDoApplication
     ]
 
 instance Worker RootApplication where
