@@ -12,7 +12,7 @@ instance Controller TodosController where
         render IndexView { .. }
 
     action NewTodoAction = do
-        let todo = newRecord
+        let todo = newRecord @Todo
         render NewView { .. }
 
     action ShowTodoAction { todoId } = do
@@ -59,4 +59,4 @@ instance Controller TodosController where
         redirectTo TodosAction
 
 buildTodo todo = todo
-    |> fill @["title", "description"]
+    |> fill @'["title", "description"]

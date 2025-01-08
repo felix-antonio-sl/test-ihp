@@ -10,7 +10,6 @@ import Web.Controller.Todos
 instance FrontController WebApplication where
     controllers = 
         [ startPage TodosAction
-        -- Generator Marker
         , parseRoute @TodosController
         ]
 

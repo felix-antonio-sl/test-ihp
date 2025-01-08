@@ -4,7 +4,27 @@ import Generated.Types
 import Web.Types
 
 -- Generator Marker
-instance AutoRoute TodosController
+instance CanRoute TodosController where
+    parseRoute' = do
+        string "/todos"
+        endOfInput >> pure TodosAction
+        <|> do
+            string "/todos/new"
+            endOfInput >> pure NewTodoAction
+        <|> do
+            string "/todos/"
+            todoId <- parseId @"todos"
+            endOfInput >> pure ShowTodoAction { .. }
+        <|> do
+            string "/todos/"
+            todoId <- parseId @"todos"
+            string "/edit"
+            endOfInput >> pure EditTodoAction { .. }
+        <|> do
+            string "/todos/"
+            todoId <- parseId @"todos"
+            string "/toggle"
+            endOfInput >> pure ToggleTodoAction { .. }
 
 instance HasPath TodosController where
     pathTo TodosAction = "/todos"

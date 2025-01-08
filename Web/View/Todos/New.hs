@@ -17,7 +17,7 @@ instance View NewView where
 
 renderForm :: Todo -> Html
 renderForm todo = formFor todo [hsx|
-    {(textField #title)}
-    {(textareaField #description)}
+    {textField #title}
+    {textareaField #description}
     {submitButton}
 |]
