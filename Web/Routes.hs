@@ -4,7 +4,6 @@ import Generated.Types
 import Web.Types
 
 -- Generator Marker
-instance AutoRoute StaticController
 instance AutoRoute TodosController
 
 instance HasPath TodosController where
