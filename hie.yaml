@@ -1,4 +1,23 @@
 # Used by haskell-language-server to find GHC settings
 cradle:
-    bios:
-        shell: "./.hie-bios"
+    cabal:
+        - path: "."
+          component: "lib:App"
+          config:
+            cradle:
+              cabal:
+                component: "lib:App"
+                ghc-options:
+                  - -XOverloadedStrings
+                  - -XNoImplicitPrelude
+                  - -XImplicitParams
+                  - -XRankNTypes
+                  - -XDisambiguateRecordFields
+                  - -XNamedFieldPuns
+                  - -XDuplicateRecordFields
+                  - -XOverloadedLabels
+                  - -XFlexibleContexts
+                  - -XTypeSynonymInstances
+                  - -XFlexibleInstances
+                  - -XQuasiQuotes
+                  - -XTemplateHaskell

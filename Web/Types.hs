@@ -6,5 +6,15 @@ import Generated.Types
 
 data WebApplication = WebApplication deriving (Eq, Show)
 
+dataStaticController = WelcomeAction deriving (Eq, Show, Data)
 
-data StaticController = WelcomeAction deriving (Eq, Show, Data)
+data TodosController
+    = TodosAction
+    | NewTodoAction
+    | ShowTodoAction { todoId :: !(Id Todo) }
+    | CreateTodoAction
+    | EditTodoAction { todoId :: !(Id Todo) }
+    | UpdateTodoAction { todoId :: !(Id Todo) }
+    | DeleteTodoAction { todoId :: !(Id Todo) }
+    | ToggleTodoAction { todoId :: !(Id Todo) }
+    deriving (Eq, Show, Data)
