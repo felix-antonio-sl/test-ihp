@@ -6,7 +6,7 @@ import Generated.Types
 
 data WebApplication = WebApplication deriving (Eq, Show)
 
-dataStaticController = WelcomeAction deriving (Eq, Show, Data)
+data StaticController = WelcomeAction deriving (Eq, Show, Data)
 
 data TodosController
     = TodosAction
